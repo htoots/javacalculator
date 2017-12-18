@@ -1,19 +1,38 @@
 package calcui;
 
+import jdk.internal.util.xml.impl.Input;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
 
     //Choose operator
-    //TODO fix error inputs
     public int getChoice() {
+        int b;
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your choice:");
-        return input.nextInt();
+        System.out.println("Input your choice:");
+        //Check if input is correct.
+        while (true) try {
+            //TODO add examples here
+            String a = input.nextLine();
+            b = Integer.parseInt(a);
+            //Self explanatory
+            if (b > 0 && b < 5) {
+                break;
+            } else {
+                System.out.println("Number has to be between 1 and 4.");
+            }
+        }
+        //If above throws a numberformatexception, then we catch it and tell the user to enter an int.
+        catch (NumberFormatException e) {
+            System.out.println("Enter an integer.");
+        }
+        return b;
     }
 
     //Get first choice of number
-    //TODO cancel choice somehow
+    //TODO maybe think of a way to cancel the next 2
     public double getNum1() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the first number (x) :");
@@ -31,18 +50,14 @@ public class Calculator {
     public double calculate(double num1, double num2, int choice) {
         if (choice == 1) {
             return (num1 + num2);
-        }
-        else if (choice == 2){
+        } else if (choice == 2) {
             return (num1 - num2);
-        }
-        else if (choice == 3){
+        } else if (choice == 3) {
             return (num1 * num2);
-        }
-        else if (choice == 4){
+        } else if (choice == 4) {
             return (num1 / num2);
-        }
-        else{
-            throw new IllegalArgumentException("Something went wrong.");
+        } else {
+            throw new IllegalArgumentException("Error #2.");
         }
     }
 }
