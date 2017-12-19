@@ -25,7 +25,7 @@ public class UI {
     }
 
     //Print result
-    public void printAnswer() {
-
+    public void printAnswer(double x, double y, double ans, char op) {
+        System.out.println(x + " " + op + " " + y + " is " + ans);
     }
 }
