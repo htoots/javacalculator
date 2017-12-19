@@ -11,6 +11,7 @@ public class Calculator {
         Scanner input = new Scanner(System.in);
         ui.printChoices();
         System.out.println("Input your choice:");
+
         //Check if input is correct.
         while (true) try {
             String a = input.nextLine();
@@ -21,7 +22,7 @@ public class Calculator {
             } else if (b > 0 && b < 6) {
                 break;
             } else {
-                System.out.println("Number has to be between 0 and 5.");
+                System.out.println("Choice has to be between 0 and 5.");
             }
         }
         //If above throws a numberformatexception, then we catch it and tell the user to enter an int.
@@ -32,7 +33,6 @@ public class Calculator {
     }
 
     //Get first choice of number
-    //TODO maybe think of a way to cancel the next 2
     public double getNum1() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the first number (x) :");
@@ -74,7 +74,7 @@ public class Calculator {
             return (num1 / num2);
         } else if (choice == 5) {
             return Math.pow(num1, num2);
-        } else {
+        } else {                                                //Error code for if somehow a wrong choice gets through.
             throw new IllegalArgumentException("Error #2.");
         }
     }

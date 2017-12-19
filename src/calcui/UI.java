@@ -1,6 +1,6 @@
 package calcui;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class UI {
 
@@ -13,7 +13,7 @@ public class UI {
     public void printChoices() {
         String[] choices = new String[]{"0 - See this list again", "1 - Addition (x + y)", "2 - Subtraction (x - y)",
                 "3 - Multiplication (x * y)", "4 - Division (x / y)", "5 - Power (x^y)"};
-        for (int i = 0; i < choices.length; i++){
+        for (int i = 0; i < choices.length; i++) {
             System.out.println(choices[i]);
         }
     }
@@ -27,6 +27,13 @@ public class UI {
 
     //Print result
     public void printAnswer(double x, double y, double ans, char op) {
-        System.out.println(x + " " + op + " " + y + " is " + ans);
+        System.out.println(x + " " + op + " " + y + " is " + ans + "\n");
+    }
+
+    //Ask for repetition of the code
+    public String repeat() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Leave input empty to do another calculation, write anything to stop the program.");
+        return input.nextLine();
     }
 }
