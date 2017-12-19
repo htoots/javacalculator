@@ -9,19 +9,22 @@ public class Calculator {
 
     //Choose operator
     public int getChoice() {
+        UI ui = new UI();
         int b;
         Scanner input = new Scanner(System.in);
+        ui.printChoices();
         System.out.println("Input your choice:");
         //Check if input is correct.
         while (true) try {
-            //TODO add examples here
             String a = input.nextLine();
             b = Integer.parseInt(a);
             //Self explanatory
-            if (b > 0 && b < 5) {
+            if (b == 0) {
+                ui.printChoices();
+            } else if (b > 0 && b < 5) {
                 break;
             } else {
-                System.out.println("Number has to be between 1 and 4.");
+                System.out.println("Number has to be between 0 and 4.");
             }
         }
         //If above throws a numberformatexception, then we catch it and tell the user to enter an int.
