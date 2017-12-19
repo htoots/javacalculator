@@ -8,6 +8,7 @@ public class Main {
         UI ui = new UI();
 
         ui.turnOn();                                                    //Welcome screen
+        ui.printChoices();                                              //Print available choices
 
         //Do loop for keeping the program going for as long as the user wants
         do {

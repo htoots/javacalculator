@@ -9,7 +9,6 @@ public class Calculator {
         UI ui = new UI();
         int b;
         Scanner input = new Scanner(System.in);
-        ui.printChoices();
         System.out.println("Input your choice:");
 
         //Check if input is correct.
@@ -19,6 +18,7 @@ public class Calculator {
             //Self explanatory
             if (b == 0) {
                 ui.printChoices();
+                System.out.println("Input your choice:");
             } else if (b > 0 && b < 6) {
                 break;
             } else {

@@ -6,7 +6,7 @@ public class UI {
 
     //Print a welcome screen
     public void turnOn() {
-        System.out.println("You are using Calco by Hannes Toots.");
+        System.out.println("You are using Calco by Hannes Toots.\n");
     }
 
     //Print choices
