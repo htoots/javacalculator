@@ -39,14 +39,30 @@ public class Calculator {
     public double getNum1() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the first number (x) :");
-        return input.nextDouble();
+        double b;
+        while (true) try {
+            String a = input.nextLine();
+            b = Double.parseDouble(a);
+            break;
+        } catch (NumberFormatException e) {
+            System.out.println("Input a correct number.");
+        }
+        return b;
     }
 
     //Get second choice of number
     public double getNum2() {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the second number (y) :");
-        return input.nextDouble();
+        double b;
+        while (true) try {
+            String a = input.nextLine();
+            b = Double.parseDouble(a);
+            break;
+        } catch (NumberFormatException e) {
+            System.out.println("Input a correct number.");
+        }
+        return b;
     }
 
     //Product of first and second number based on choice.
