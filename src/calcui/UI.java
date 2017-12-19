@@ -12,15 +12,16 @@ public class UI {
     //Print choices
     public void printChoices() {
         String[] choices = new String[]{"0 - See this list again", "1 - Addition (x + y)", "2 - Subtraction (x - y)",
-                "3 - Multiplication (x * y)", "4 - Division (x / y)"};
+                "3 - Multiplication (x * y)", "4 - Division (x / y)", "5 - Power (x^y)"};
         for (int i = 0; i < choices.length; i++){
             System.out.println(choices[i]);
         }
     }
+    //Add a boolean to check if choice was correct
 
     //Print choices for final println
     public char returnChoice(int choice) {
-        char[] operators = new char[]{'+', '-', '*', '/'};
+        char[] operators = new char[]{'+', '-', '*', '/', '^'};
         return operators[choice - 1];
     }
 

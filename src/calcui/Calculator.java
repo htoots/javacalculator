@@ -18,10 +18,10 @@ public class Calculator {
             //Self explanatory
             if (b == 0) {
                 ui.printChoices();
-            } else if (b > 0 && b < 5) {
+            } else if (b > 0 && b < 6) {
                 break;
             } else {
-                System.out.println("Number has to be between 0 and 4.");
+                System.out.println("Number has to be between 0 and 5.");
             }
         }
         //If above throws a numberformatexception, then we catch it and tell the user to enter an int.
@@ -72,6 +72,8 @@ public class Calculator {
             return (num1 * num2);
         } else if (choice == 4) {
             return (num1 / num2);
+        } else if (choice == 5) {
+            return Math.pow(num1, num2);
         } else {
             throw new IllegalArgumentException("Error #2.");
         }
