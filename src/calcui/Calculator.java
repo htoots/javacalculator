@@ -1,8 +1,5 @@
 package calcui;
 
-import jdk.internal.util.xml.impl.Input;
-
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculator {
